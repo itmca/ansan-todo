@@ -25,8 +25,12 @@
   "eslintConfig": {
     "extends": [
       "react-app",
+      "airbnb-typescript",
       "react-app/jest"
-    ]
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+      }
   },
   "browserslist": {
     "production": [
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-typescript": "^14.0.0"
   }
 }
