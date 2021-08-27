@@ -12,7 +12,7 @@ function TodoListBody() : JSX.Element{
   
   return (
     <div className='listBody'>
-      {todoList.map((todo)=> <TodoItem text={todo.text} key={todo.id} done={todo.done}/>)}
+      {todoList.map((todo)=> <TodoItem id={todo.id} text={todo.text} key={todo.id} done={todo.done}/>)}
     </div>
   );
 }
