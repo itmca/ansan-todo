@@ -24,3 +24,12 @@ h1 {
   margin-top: 40px;
   font-weight: bold;
 }
+
+.sub-count-info{
+  margin-top: 3px;
+}
+
+.sub-count-info > span{
+  font-size: 0.9rem;
+  color:#868e96;
+}
