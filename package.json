@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb-typescript": "^14.0.0"
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "jest": "^27.1.0"
   }
 }
