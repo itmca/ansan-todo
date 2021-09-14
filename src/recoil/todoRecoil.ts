@@ -1,4 +1,7 @@
-import { atom } from 'recoil';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import axios, { AxiosResponse } from 'axios';
+import { atom, selector } from 'recoil';
+import { TodoListService } from '../services/TodoListService';
 
 export interface ITodoItem {
   id: number;
@@ -14,13 +17,29 @@ export const inputState = atom<string>({
 export const todoListState = atom<ITodoItem[]>({
   key: 'todoListState',
   default: [
-    {
-      id: 1,
-      text: 'Todo List',
-      done: false,
-    },
-
   ],
 });
+
+export const updateTodoState = atom<number>({
+  key: 'updateTodoState',
+  default: 0,
+});
+
+export const getTodoListState = selector<ITodoItem[]>(
+  {
+    key: 'getTodoListState',
+    get: async ({ get }) => {
+      get(updateTodoState);
+      try {
+        const result = await TodoListService.getTodoListService();
+        return result || [];
+
+      } catch (error) {
+        console.log(error);
+        return [];
+      }
+    },
+  },
+);
 
 export default todoListState;
